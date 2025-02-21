@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gästbook</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
+
+</head>
+<body>
+    <h1>Gästbook</h1>
+    <form action="/add" method="POST">
+        <label for="name">Namn:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <br>
+        <label for="message">Meddelande:</label><br>
+        <input type="text" id="message" name="message" required><br>
+        <br>
+        <button id="button" type="submit">Skicka</button>
+    </form>
+    <h2>Tidigare inggg</h2>
+    <ul>
+        <% guestbook.forEach((message) =>{ %>
+        <li>
+            <strong><%= message.namn %></strong><br>
+            <%= message.meddelande %>
+        </li>
+        <br>
+        <%}); %>
+    </ul>
+    <form action="/login" method="GET">
+        <h2>logga in som admin</h2>
+        <button id="button" type="submit">logga in</button>
+    </form>
+</body>
+</html>

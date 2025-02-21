@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    
+
+</head>
+<body>
+    <h1>Admin log in</h1>
+
+    <form action="/login" method="POST">
+        <label for="name">Användarnamn</label>
+        <br>
+        <input type="text" id="admin_name" name="admin_name" required>
+        <br> 
+        <label for="password">lösenord</label>
+        <br>
+        <textarea id="password" name="password" required></textarea>
+        <br>
+        <button id="button" type="submit">skcika</button>
+        <% if (fel_meddelande ){%>
+            <p style="color: red;"><%=fel_meddelande%></p>
+        <%}%>
+
+    </form>
+    <form action="/" method="GET">
+        <h2>tillbaka till start</h2>
+        <button id="button" type="submit">tillbaka</button>
+    </form>
+</body>
+</html>
